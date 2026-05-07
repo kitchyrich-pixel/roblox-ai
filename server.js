@@ -4,7 +4,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const GROQ_API_KEY = "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";
+const GROQ_API_KEY = process.env.GROQ_API_KEY;
 
 const SYSTEM_PROMPT = `You are the GlobaL AI assistant, a helpful in-game guide for a Roblox clicking game called GlobaL.
 
