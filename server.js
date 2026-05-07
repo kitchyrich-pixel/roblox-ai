@@ -49,8 +49,9 @@ app.post("/ask", async (req, res) => {
         const answer = data.choices?.[0]?.message?.content || "I'm not sure about that one!";
         res.json({ answer });
     } catch (err) {
-        res.json({ answer: "I'm having trouble right now, try again in a sec!" });
-    }
+    console.error("Groq error:", err.message);
+    res.json({ answer: "I'm not sure about that one!" });
+}
 });
 
 const PORT = process.env.PORT || 3000;
